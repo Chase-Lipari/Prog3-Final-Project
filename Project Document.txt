@@ -1,0 +1,70 @@
+					Description
+
+The Inventory Tracker is a simple application that allows groceries to track available stock of items in their stores. 
+A grocery owner will add all available items in their store into the app. 
+The owner should be able to update available quantities. The app provides owners with information about all items. 
+In addition, the app provides a shopping list report for items that are not available in minimum quantities.
+
+					Development Approach
+
+1. start by implementing the classes
+2. complete the Xaml layout
+3. bind the Xaml to the class properties 
+4. implement button functionality 
+5. implement save and open file functionality
+6. implement opening new windows to show a general report and shopping list
+7. Touch up on minor validation and testing
+
+					Class Design
+Completed the class properties first so that I could bind to the Xaml
+The rest of the class was finished after I had implemented buttons that needed methods or could benefit from them
+
+					UML Diagrams
+
+Items					|	Inventory		|
+					|				|
+- item Name:string			| - items: List<item>		|
+- availQty:int				|				|
+- minQty:int				|-------------------------------|
+- isleNum:int				|				|
+- supplier:string			|+ Inventory():Void		|
++ Category: enum			|+ AddItem(item:Item):Void	|
+- category: Category			|+ RemoveItem(item:Item):Void	|
+- id: string				|+ UpdateItem(item:Item):Void	|
+---------------------------------	|+ Shopping():List<Item>	|
++ Item():Void				|+ GetItems():List<Item>	|
++ Item(Name:string, availQty:int, 	|				|
+minQTY, category, 			|-------------------------------|
+isleNumber, supplier):Void		|
+					|
++GetItemName():String			|
++SetItemName():Void			|
+					|
++GetAvailableQty():Int			|
++SetAvailableQty():Void			|
+					|
++GetMinQty():Int			|
++SetMinQty():Void			|
+					|
++GetIsleNum():Int			|
++SetIsleNum():Void			|
+					|
++GetSupplier():String			|
++SetSupplier():Void			|
+					|
++GetICategory():Category		|
++SetICategory():Void			|
+					|
++GetId():String				|
+-SetId():Void				|
+					|
++GetCSVData():String			|
++SetCSVData():Void			|
+----------------------------------------|					
+
+
+					Future Work
+
+I think in the future a feature to download the shopping list as a csv or text file would proove beneficial. 
+
+	

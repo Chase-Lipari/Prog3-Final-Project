@@ -1,0 +1,121 @@
+﻿<Window x:Class="project_Chase_prog3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project_Chase_prog3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1100">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.20*"/>
+            <!--<ColumnDefinition Width="0.5*"/>-->
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+         
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Margin="0,0,0,5">
+            <TextBlock Text=" Inventroy Tracker"  FontSize="32" FontWeight="Bold"  Margin="0,0,0,10"/>
+            
+        </StackPanel>
+        
+        
+        <!--#region Input column -->
+        
+        <!--Name--><!--
+        <TextBlock Text="Item Name:" FontWeight="Bold" Grid.Column="0" Grid.Row="1" Margin="5,0,5,5"/>
+        <TextBox x:Name="txtName" Grid.Column="1" Grid.Row="1" Width="150" Margin="0,0,0,5"/>
+            --><!--Isle Number--><!--
+        <TextBlock Text="Isle Number:" FontWeight="Bold" Grid.Column="0" Grid.Row="2" Margin="5,0,5,5"/>
+        <TextBox x:Name="txtIsleNum" Grid.Column="1" Grid.Row="2" Width="150" Margin="0,0,0,5"/>
+            --><!--Supplier--><!--
+        <TextBlock Text="Supplier:" FontWeight="Bold" Grid.Column="0" Grid.Row="3" Margin="5,0,5,5"/>
+        <TextBox x:Name="txtSupplier" Grid.Column="1" Grid.Row="3" Width="150" Margin="0,0,0,5"/>
+            --><!--Available Qty--><!--
+        <TextBlock Text="Available Quantity:" FontWeight="Bold" Grid.Column="0" Grid.Row="4" Margin="5,0,5,5"/>
+        <TextBox x:Name="txtAvailableQty" Grid.Column="1" Grid.Row="4" Width="150" Margin="0,0,0,5"/>
+            --><!--Minimum Qty--><!--
+        <TextBlock Text="Minimum Quantity:" FontWeight="Bold" Grid.Column="0" Grid.Row="5" Margin="5,0,5,5"/>
+        <TextBox x:Name="txtMinQty" Grid.Column="1" Grid.Row="5" Width="150" Margin="0,0,0,5"/>
+            --><!--Category--><!--
+        <TextBlock Text="Category:" Grid.Column="0" Grid.Row="6" FontWeight="Bold" Margin="5,0,5,5"/>
+        <ComboBox x:Name="comboCategory"  Width="150" Grid.Column="1" Grid.Row="6" Margin="0,0,0,5"/>-->
+        <!--#endregion-->
+        
+        <!--#region Buttons -->
+       
+        <!--submit button-->
+        <!--<Button Content="Submit" Width="100" Margin="0,0,0,0" Grid.Column="0" Grid.Row="7" 
+                FontWeight="Bold" Height="22" VerticalAlignment="Bottom" Click="Button_Submit"/>-->
+        <!--Save button-->
+        <Button Content="Save" Width="100" Margin="0,0,0,0" Grid.Column="0" Grid.Row="7" 
+                FontWeight="Bold" Height="22" VerticalAlignment="Bottom" Click="Button_Save"/>
+        <!--Open File Button-->
+        <Button Content="Open File" Width="100" Margin="0,0,0,0" Grid.Column="0" Grid.Row="8" 
+                FontWeight="Bold" Height="22" VerticalAlignment="Bottom" Click="Button_Open" />
+        <!--Shopping LIst button-->
+        <Button Content="Shopping List" Width="100" Margin="0,0,0,0" Grid.Column="0" Grid.Row="9" 
+                FontWeight="Bold" Height="22" VerticalAlignment="Bottom" Click="Button_Shopping_Window" />
+        <!--General Report button-->
+        <Button Content="General Report" Width="100" Margin="0,0,0,0" Grid.Column="0" Grid.Row="10" 
+                FontWeight="Bold" Height="22" VerticalAlignment="Bottom" Click="Button_General" />
+        <!--Add Button-->
+        <Button Content="Add Items" Width="100" Margin="0,0,0,0" Grid.Column="0" Grid.Row="6" 
+                FontWeight="Bold" Height="22" VerticalAlignment="Bottom" Click="Button_Add"  />
+        <!--#endregion-->
+
+        <!--#region ListBox for items -->
+        
+        <ListBox x:Name="lbItems" Grid.Row="1" Grid.Column="3" Grid.RowSpan="12" Margin="0,10,30,20">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Delete" Click="MenuItem_Delete"/>
+                    <MenuItem Header="Update" Click="MenuItem_Update" />
+                </ContextMenu>
+            </ListBox.ContextMenu>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="Name: " FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ItemName}"/>
+                        <TextBlock Text=" | " FontWeight="Bold"/>
+                        <TextBlock Text=" Isle Number: " FontWeight="Bold"/>
+                        <TextBlock Text="{Binding IsleNum}"  Cursor="Hand"/>
+                        <TextBlock Text=" | " FontWeight="Bold"/>
+                        <TextBlock Text=" Supplier: " FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Supplier}" Cursor="Hand"/>
+                        <!--<TextBlock Text=" | " FontWeight="Bold"/>
+                        <TextBlock Text=" Available: " FontWeight="Bold"/>
+                        <TextBlock Text="{Binding AvailableQty}"  Cursor="Hand"/>
+                        <TextBlock Text=" | " FontWeight="Bold"/>
+                        <TextBlock Text=" Minimum: " FontWeight="Bold"/>
+                        <TextBlock Text="{Binding MinQty}"  Cursor="Hand"/>-->
+                        <TextBlock Text=" | " FontWeight="Bold"/>
+                        <TextBlock Text=" Category: " FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ICategory}"  Cursor="Hand"/>
+
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <!--#endregion-->
+
+
+    </Grid>
+</Window>

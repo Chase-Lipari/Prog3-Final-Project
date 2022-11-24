@@ -1,0 +1,60 @@
+﻿<Window x:Class="project_Chase_prog3.AddItems"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project_Chase_prog3"
+        mc:Ignorable="d"
+        Title="AddItems" Height="450" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.70*"/>
+            <ColumnDefinition Width="1*"/>
+           
+        </Grid.ColumnDefinitions>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <!--#region Input column -->
+
+        <!--Name-->
+        <TextBlock Text="Item Name:" FontWeight="Bold" Grid.Column="0" Grid.Row="1" Margin="5,0,5,5"/>
+        <TextBox x:Name="txtName" Grid.Column="1" Grid.Row="1" Width="150" Margin="0,0,0,5"/>
+        <!--Isle Number-->
+        <TextBlock Text="Isle Number:" FontWeight="Bold" Grid.Column="0" Grid.Row="2" Margin="5,0,5,5"/>
+        <TextBox x:Name="txtIsleNum" Grid.Column="1" Grid.Row="2" Width="150" Margin="0,0,0,5"/>
+        <!--Supplier-->
+        <TextBlock Text="Supplier:" FontWeight="Bold" Grid.Column="0" Grid.Row="3" Margin="5,0,5,5"/>
+        <TextBox x:Name="txtSupplier" Grid.Column="1" Grid.Row="3" Width="150" Margin="0,0,0,5"/>
+        <!--Available Qty-->
+        <TextBlock Text="Available Quantity:" FontWeight="Bold" Grid.Column="0" Grid.Row="4" Margin="5,0,5,5"/>
+        <TextBox x:Name="txtAvailableQty" Grid.Column="1" Grid.Row="4" Width="150" Margin="0,0,0,5"/>
+        <!--Minimum Qty-->
+        <TextBlock Text="Minimum Quantity:" FontWeight="Bold" Grid.Column="0" Grid.Row="5" Margin="5,0,5,5"/>
+        <TextBox x:Name="txtMinQty" Grid.Column="1" Grid.Row="5" Width="150" Margin="0,0,0,5"/>
+        <!--Category-->
+        <TextBlock Text="Category:" Grid.Column="0" Grid.Row="6" FontWeight="Bold" Margin="5,0,5,5"/>
+        <ComboBox x:Name="comboCategory"  Width="150" Grid.Column="1" Grid.Row="6" Margin="0,0,0,5"/>
+        <!--#endregion-->
+
+        <Button Content="Submit" Width="100" Margin="0,0,0,0" Grid.Column="0" Grid.Row="7" 
+                FontWeight="Bold" Height="22" VerticalAlignment="Bottom" Click="Button_Submit"/>
+
+    </Grid>
+</Window>

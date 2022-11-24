@@ -1,0 +1,23 @@
+﻿<Window x:Class="project_Chase_prog3.Shopping"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project_Chase_prog3"
+        mc:Ignorable="d"
+        Title="Shopping" Height="450" Width="800">
+    <StackPanel>
+        <Grid Margin="10">
+            <DataGrid x:Name="gridTable" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Item Name" Binding="{Binding ItemName}"/>
+                    <DataGridTextColumn Header="AvailableQTY" Binding="{Binding AvailableQty}"/>
+                    <DataGridTextColumn Header="MinimumQTY" Binding="{Binding MinQty}"/>
+                    <DataGridTextColumn Header="Supplier" Binding="{Binding Supplier}"/>
+                    <DataGridTextColumn Header="Isle Number" Binding="{Binding IsleNum}"/>
+                    <DataGridTextColumn Header="Category" Binding="{Binding ICategory}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </StackPanel>
+</Window>
